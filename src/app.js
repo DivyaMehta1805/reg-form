@@ -3,14 +3,14 @@ const app = express();
 const path = require("path");
 const Register = require("./model/registers");
 require("./db/conn");
-//const staticc= path.join(__dirname,"../public");
-//app.use(express.static(staticc));
+const staticc= path.join(__dirname,"../public");
+app.use(express.static(staticc));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.set("view engine","hbs");
 app.get("/",(req,res)=>
 {
-    res.render("index");
+    res.render("register");
 });
 app.get("/register",(req,res)=>
 {
