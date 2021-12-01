@@ -12,6 +12,10 @@ app.get("/",(req,res)=>
 {
     res.render("register");
 });
+app.get("/index",(req,res)=>
+{
+    res.render("index");
+});
 app.get("/register",(req,res)=>
 {
     res.render("register");
@@ -44,7 +48,7 @@ app.post("/register",async(req,res)=>
             console.log(data);
                 
         });
-            res.redirect("index");
+            res.redirect("/index");
         
         
     }
